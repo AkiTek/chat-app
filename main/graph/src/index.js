@@ -1,13 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'react-router-redux'
 import { createBrowserHistory } from 'history'
-import createStore from './store'
+import createStore from './_helpers/store'
 // import TodoApp from './containers/TodoApp'
 // import App from './components/App'
-import Messages from './containers/Messages'
+import { App } from './App'
 
 const history = createBrowserHistory()
 const store = createStore(history);
@@ -17,11 +15,7 @@ console.log(store.getState())
 //  Routeは直接URL書き込みを許さない。これは、historyへpushすることで成立するから
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <div>
-        <Route exact path="/" component={Messages} />
-      </div>
-    </ConnectedRouter>
+      <App />
   </Provider>,
   document.getElementById('root')
 );

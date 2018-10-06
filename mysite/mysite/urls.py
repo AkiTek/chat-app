@@ -17,7 +17,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from chat.urls import router as chat_router
+
 urlpatterns = [
     url(r'^chat/', include('chat.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^api/',include(chat_router.urls))
 ]

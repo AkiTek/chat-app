@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { initWebsocket, closeWebsocket } from '../actions/messages'
-import Messages from '../components/Messages'
+import { initWebsocket, closeWebsocket } from '../_actions/messages'
+import Messages from '../_components/ChatDisplay/Messages'
 import { push } from 'react-router-redux'
 
 
@@ -17,7 +17,7 @@ function mapDispatchToProps(dispatch){
     },
     closeWebsocket(){
       dispatch(closeWebsocket());
-    }
+    },
   };
 }
 
